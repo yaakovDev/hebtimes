@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <xmeta http-equiv="Content-Security-Policy"
+            content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+            
+
+        <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' https://unpkg.com/flickity@2.2.1/dist/flickity.pkgd.min.js https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js https://hammerjs.github.io/dist/hammer.min.js https://code.jquery.com https://fonts.googleapis.com data: gap: ws: 'unsafe-eval' 'unsafe-inline'; 
+        style-src 'self'  https://unpkg.com/flickity@2.2.1/dist/flickity.min.css https://unpkg.com/flickity@2/dist/flickity.min.css 'unsafe-inline'; 
+        media-src *; 
+        img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="description" content="hebrew times">
+        <meta name="keywords" content="hebrew times,sinagoug times">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <!--link rel="stylesheet" href="https://unpkg.com/flickity@2.2.1/dist/flickity.min.css"-->
+        <!--link rel="stylesheet" href="../node_modules/flickity/dist/flickity.css" media="screen"-->
+        <title>zman</title>
+    </head>
+    <body>
+        <div class="app">
+            <div class="grid-container">
+                <div class="grid-row1-left" ><a class='text-caption'>שקיעה</a><br><a id='sunset'></a></div>
+                <div class="grid-row1-center"><a id='current_date'></a><br>
+                    <a class="text-caption" id='parasha'></a>
+                </div>
+                <div class="grid-row1-span1"><a class='text-caption'>זריחה</a><br><a id='sunrise'></a></div>  
+                <div class="grid-row2-span1"><a class='text-caption'>עלות השחר</a><br><a id='dawn'></a></div> 
+                
+                <div class="grid-row3-center clock-font"  >
+                    <div id="time-carousel"  data-flickity='{"freeScroll":false, "prevNextButtons":false, "pageDots": false,"wrapAround":true }'>
+                        <div class="carousel-cell"  id='current_time'></div>
+                        <div class="carousel-cell"  id='back_time'></div>
+                    </div>
+                </div>
+
+                <div class="grid-row4-lower-left">
+                        <div class='saturday-caption'>הדלקת נרות:<a id='candle_lighting'></a></div>
+                        <div class='saturday-caption'>מוצ"ש:<a id='motsash_geonim'></a></div>
+                        <div class='saturday-caption'>ר"ת:<a id='motash_rtam'></a></div>
+                </div>
+
+                <div class="grid-corner" >
+                    <a href="mailto:yaakovaa@gmail.com" style="color: white;">yaakovaa@gmail.com</a>
+                </div>
+
+                
+                <div class="grid-row4-lower-right">      <a class='text-caption'>ק"ש גר"א</a><br><a id='krshm_gra'></a></div>
+                <div class="grid-row4-lower-right-most"> <a class='text-caption'>ק"ש מג"א</a><br><a id='krshm_mga'></a></div>
+            </div>
+        </div>  
+           
+        <xscript type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="./js/hebcal.min.js"></script>
+        <!--script src="https://hammerjs.github.io/dist/hammer.min.js"></script-->        
+        <script type="text/javascript" src="./js/sunrise-sunset.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="  crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        <!--script src="https://unpkg.com/flickity@2.2.1/dist/flickity.pkgd.min.js"></script-->
+        
+        <!--script src="../node_modules/flickity/dist/flickity.pkgd.min.js"></script-->
+        <script type="module" src="./js/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,189 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:12px;
+    height:100vh;
+    margin:0px;
+    padding:0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
+    text-transform:uppercase;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    xbackground:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    xposition:absolute;             /* position in the center of the screen */
+    xleft:50%;
+    xtop:50%;
+    height:100%;                   /* text area height */
+    xwidth:225px;                   /* text area width */
+    text-align:center;
+    xpadding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    xmargin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        xpadding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        xmargin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+
+/* GRID GRID GRID GRID GRID GRID GRID GRID GRID GRID GRID GRID GRID  */
+:root{
+  --main-background-color:black;
+  --main-text-color:yellow;
+}
+
+
+.theme-dark {
+  --main-background-color:black;
+  --main-text-color:yellow;
+}
+
+.theme-light {
+  --main-background-color:white;
+  --main-text-color:black;
+}
+
+.grid-container {
+    display: grid;
+    height:100%;
+    grid-template-columns:repeat(6, auto);
+    grid-template-rows:repeat(5, auto);
+    background-color: var(--main-background-color);
+    color:var(--main-text-color);
+    text-align: center;
+    font-size: 20px; 
+  }
+
+.grid-row1-left {
+  grid-column: 1/span 1;
+  grid-row: 1;
+  }  
+
+.grid-row1-center {
+    grid-column: 2/span 4;
+    grid-row: 1;
+    font-size: 30px; 
+    }    
+
+.grid-row1-span1 {
+    grid-column: 6/span 1;
+    grid-row: 1;
+}
+     
+.grid-row2-span1 {
+    grid-column: 5/span 1;
+    grid-row: 1;
+}  
+  
+.grid-row2-center {
+  grid-column: 3/span 2;
+  grid-row: 2;
+  font-size: 30px; 
+  }  
+  
+.grid-row3-center {
+  grid-column: 2/span 4;
+  grid-row: 3;
+}
+
+.grid-row4-lower-left {
+  grid-column: 1/ span 1;
+  grid-row: 4/span 1;
+ }   
+
+ .grid-corner
+ {
+  grid-column: 1/ span 1;
+  grid-row: 5;
+  color: white;
+  font-size:xx-small;
+ }
+
+.grid-row4-lower-right {
+grid-column: 5/ span 1;
+grid-row: 4;
+}    
+
+.grid-row4-lower-right-most
+{
+ grid-column: 6/ span 1;
+ grid-row: 4;
+}
+
+
+
+ 
+@font-face{
+font-family:'digital-clock-font';
+src:url('DIGITALDREAM.ttf');
+}
+
+.clock-font {
+  font-family: 'digital-clock-font';
+  font-size: 50px;
+}
+
+.text-caption {
+  color:  khaki;
+}
+
+.saturday-caption {
+  color:  yellow;
+  background:var(--main-background-color)
+  xtext-align: right;
+}
+
+/* ---------------------------------------------------------------------*/  
+.main-carousel {
+  background:red;
+  border:none;
+  border-style: none;
+  outline: none; 
+} 
+
+
+.carousel-cell {
+  width: 100%;
+  height: 20vh;
+  background:var(--main-background-color)
+  border:none;
+  border-style: none;
+  counter-increment: gallery-cell;
+  outline: none;
+}
